@@ -1,11 +1,12 @@
 buildscript {
     repositories {
         maven { url "http://repo.spring.io/libs-snapshot" }
+        maven { url 'http://dl.bintray.com/msgilligan/maven' }
         mavenLocal()
     }
     dependencies {
         classpath("org.springframework.boot:spring-boot-gradle-plugin:0.5.0.M6")
-        classpath 'org.gradle.api.plugins:gradle-cloudbees-plugin:0.1.1-SNAPSHOT'
+        classpath 'org.gradle.api.plugins:gradle-cloudbees-plugin:0.1.1'
     }
 }
 

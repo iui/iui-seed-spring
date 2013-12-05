@@ -1,0 +1,37 @@
+= iui-seed-spring
+
+== iUI Seed Project using Spring Boot
+
+This is a prototype "seed" project that uses http://www.iui-js.org[iUI] on the client and http://projects.spring.io/spring-boot/[Spring Boot] on the server.
+
+== Directory Structure
+
+As follows.
+
+  * +src/main/webapp+ - directory contains static HTML and resources
+  * +src/main/java+ - directory contains Java source code for Configuration, Controllers, etc.
+  * +build.gradle+ - Gradle build file
+  
+== Running
+
+    ./gradlew build ; java -jar path/file.war
+
+NOTE:: It would be nice to have single Gradle command to build and run.
+    
+== Building
+
+To create an "exectable WAR" in the +build/libs+ directory:
+
+    ./gradlew build
+    
+To run that app:
+
+    java -jar path/file.war
+
+== To manually deploy to CloudBees
+
+    ./gradlew cloudBeesAppDeployArchive
+
+
+
+    

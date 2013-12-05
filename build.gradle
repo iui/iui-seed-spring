@@ -1,0 +1,51 @@
+buildscript {
+    repositories {
+        maven { url "http://repo.spring.io/libs-snapshot" }
+        mavenLocal()
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:0.5.0.M6")
+        classpath 'org.gradle.api.plugins:gradle-cloudbees-plugin:0.1.1-SNAPSHOT'
+    }
+}
+
+apply plugin: 'war'
+apply plugin: 'spring-boot'
+apply plugin: 'cloudbees'
+
+archivesBaseName = 'iuiseed'
+version =  '0.1.0'
+
+repositories {
+    mavenCentral()
+    maven {
+        url 'http://repo.spring.io/milestone'
+    }
+}
+
+dependencies {
+    compile "org.springframework.boot:spring-boot-starter-web:0.5.0.M6"
+}
+
+springBoot {
+    mainClass = "org.iuijs.config.Application"
+    backupSource = true
+}
+
+def springBootWarLauncherClassName = "org.springframework.boot.loader.WarLauncher"
+
+cloudBees {
+    apiKey = cloudbeesApiKey
+    apiSecret = cloudbeesApiSecret
+    appId = 'iui/iui-seed-spring'
+    archiveType = 'jar'
+    archiveFile = war.archivePath
+    deltaDeploy = true
+    parameters = [containerType: "java", 'runtime.class': springBootWarLauncherClassName]
+}
+
+cloudBeesAppDeployArchive.dependsOn assemble
+cloudBeesAppDeployArchive.message = project.version
+
+
+

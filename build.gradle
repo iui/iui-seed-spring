@@ -1,7 +1,7 @@
 buildscript {
     repositories {
-        maven { url "http://repo.spring.io/libs-snapshot" }
         maven { url 'http://dl.bintray.com/msgilligan/maven' }
+        maven { url "http://repo.spring.io/libs-snapshot" }
         mavenLocal()
     }
     dependencies {

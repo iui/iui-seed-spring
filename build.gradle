@@ -38,8 +38,8 @@ springBoot {
 def springBootWarLauncherClassName = "org.springframework.boot.loader.WarLauncher"
 
 cloudBees {
-    apiKey = cloudbeesApiKey
-    apiSecret = cloudbeesApiSecret
+    apiKey = "" // cloudbeesApiKey
+    apiSecret = "" // cloudbeesApiSecret
     appId = 'iui/iui-seed-spring'
     archiveType = 'jar'
     archiveFile = war.archivePath

@@ -37,6 +37,9 @@ springBoot {
 
 def springBootWarLauncherClassName = "org.springframework.boot.loader.WarLauncher"
 
+// Make the deploy target easier to find/type
+task deploy(dependsOn: cloudBeesAppDeployArchive)
+
 cloudBees {
     apiKey = "" // cloudbeesApiKey
     apiSecret = "" // cloudbeesApiSecret

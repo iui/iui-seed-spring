@@ -16,7 +16,7 @@ As follows.
 
     ./gradlew build ; java -jar path/file.war
 
-NOTE:: It would be nice to have single Gradle command to build and run.
+NOTE:: It would be nice to have single Gradle command to build and run.  (It looks like this will be in the M7 release of Spring Boot.)
     
 == Building
 
@@ -30,7 +30,7 @@ To run that app:
 
 == To manually deploy to CloudBees
 
-    ./gradlew cloudBeesAppDeployArchive
+    ./gradlew deploy
 
 
 
